@@ -1,7 +1,7 @@
-export default defineNuxtConfig ({
+export default defineNuxtConfig({
   // Disable strict
   typescript: {
-    strict: false
+    strict: false,
   },
   app: {
     head: {
@@ -9,9 +9,14 @@ export default defineNuxtConfig ({
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { hid: 'description', name: 'description', content: '' },
+        // { hid: 'description', name: 'description', content: '' },
       ],
       link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
-    }
-  }
-});
+    },
+  },
+
+  alias: {
+    '.prisma/client/index-browser': '@prisma/client',
+    '.prisma/client/default': '@prisma/client',
+  },
+})
